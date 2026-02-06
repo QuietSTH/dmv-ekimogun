@@ -1,0 +1,324 @@
+/* 1. SETUP & VARIABLES */
+:root {
+    --primary: #0a5c36;  /* Ondo Green */
+    --gold: #d4af37;     /* Gold */
+    --dark: #111;        /* Black */
+    --light: #f8f9fc;    /* Off-white background */
+    --text: #333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; /* Makes the click 'glide' to the section */
+}
+
+body {
+    background: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* 2. NAVIGATION */
+header {
+    position: sticky; /* Keeps nav at top when scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    background: white;
+    padding: 15px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.logo strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary);
+}
+
+.join-btn {
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.join-btn:hover {
+    background: #084a2b;
+}
+
+/* 3. HERO SECTION */
+.hero {
+    padding: 120px 8%;
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+    url("https://images.unsplash.com/photo-1469474968028-56623f02e42e") center/cover no-repeat;
+    color: white;
+    min-height: 80vh; /* Takes up most of the screen */
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.location-tag {
+    color: var(--gold);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.primary-btn {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.secondary-btn {
+    border: 2px solid white;
+    color: white;
+}
+
+/* 4. GENERAL SECTIONS */
+.section {
+    padding: 80px 8%;
+}
+
+.alt-bg {
+    background: white; /* Alternate background for distinction */
+}
+
+.section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--primary);
+    text-align: center;
+    position: relative;
+}
+
+/* Optional: Adds a small gold line under titles */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 10px auto 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--gold); /* Adds a pro touch */
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+/* 5. LEADERSHIP STYLES */
+.leadership-card {
+    text-align: center;
+    border-top: 4px solid var(--primary);
+}
+
+.leadership-card h4 {
+    color: var(--primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.leadership-card .name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+/* 6. EVENTS STYLES */
+.events-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.event-row {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.date-box {
+    background: var(--primary);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.date-box .month {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.date-box .day {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* 7. IMPACT SECTION */
+.impact {
+    background: var(--primary);
+    color: white;
+}
+
+.impact h2 {
+    color: var(--gold);
+}
+
+.impact .card {
+    background: rgba(255,255,255,0.1); /* Transparent white */
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    border-top: none;
+}
+
+.impact .card h3 {
+    color: var(--gold);
+}
+
+/* 8. CTA & FOOTER */
+.cta {
+    text-align: center;
+    background: #eef2f6;
+}
+
+.join-btn-large {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.contact-info {
+    margin: 20px 0;
+    font-size: 1.1rem;
+}
+
+footer {
+    background: var(--dark);
+    color: #ccc;
+    padding: 50px 8%;
+    text-align: center;
+    border-top: 5px solid var(--gold);
+}
+
+.small-text {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* 9. MOBILE OPTIMIZATION */
+@media(max-width:768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .location-tag {
+        font-size: 1rem;
+    }
+
+    /* Hide the text links on mobile */
+    nav ul {
+        display: none;
+    }
+
+    /* Ensure the Join button stays visible */
+    .join-btn {
+        display: block; 
+        font-size: 0.9rem;
+    }
+    
+    .logo strong {
+        font-size: 0.9rem; /* Smaller text for logo on mobile */
+    }
+}
